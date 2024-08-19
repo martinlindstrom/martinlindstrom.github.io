@@ -1,3 +1,16 @@
-theme: jekyll-theme-minimal
-title: Martin's homepage
-description: This website is currently under construction. Please check back later!
+baseurl: "" # Set to "/martinlindstrom" before pushing to GitHub
+url: "https://martinlindstrom.github.io"
+include: ['_pages', '_assets', '_papers']
+
+collections:
+  papers:
+    order:
+      - 240728_gram_at_icml24.html
+      - 210701_ecc.html
+
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      layout: "default"

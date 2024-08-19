@@ -1,0 +1,280 @@
+/* General style */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+  
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 59px;
+    border: 0px;
+    border-spacing: 0px;
+    border-collapse: separate;
+}
+  
+main {
+    flex: 1;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the content horizontally */
+}
+  
+footer {
+    font-size: 12px;
+    padding: 0em;
+    background-color: #f8f8f8;
+    border-top: 1px solid #e7e7e7;
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+header {
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #e7e7e7;
+    padding: 1em 0;
+    width: 100%;
+    align-items: left;
+    position: fixed;
+    top: 0;
+}
+
+header nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Centers the content vertically */
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+header nav a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+header nav small_vline{
+    width: 1px; /* Line width */
+    background-color: black; /* Line color */
+    height: 24px; /* Override in-line if you want specific height. */
+    display: inline-block; 
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+hr.small_vline {
+    height: 24px;
+    margin: 0 7px;
+    border: 1px solid #6c757d;
+}
+
+/* Title (name, affiliation, links) styling  */
+#title-section {
+    margin: 0em 0;
+    text-align: center;
+}
+
+#title-section h1 {
+    font-size: 40px;
+    margin-bottom: 0.5em;
+}
+
+#title-section h2 {
+    font-size: 24px;
+    margin-bottom: 1em;
+    color: #6c757d;
+}
+
+#title-section .links {
+    display: flex;
+    justify-content: center; /* Centers links horizontally */
+    align-items: center;     /* Centers links vertically */
+    font-size: 14px;
+    margin-bottom: 1em;
+}
+
+#title-section .links a {
+    text-decoration: none;
+    color: #007bff;
+    margin-right: 0.5em;
+    margin-left: 0.5em;
+}
+
+#title-section .links vline {
+    height: 17px;
+    width: 1px;
+    background-color: black;
+    display: inline-block;
+}
+
+/* Biography style */
+.biography {
+    display: flex;
+    align-items: flex-start; 
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.biography .text {
+    width: 60%;
+    text-align: left;
+    margin-right: 1.5em; /* Add space between text and image */
+}
+
+.biography .text p {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.biography .image {
+    width: 40%;
+}
+
+.biography .image img {
+    width: 100%;
+    height: auto; /* Don't destroy the aspect ratio */
+}
+
+/* Paper formatting style */
+
+#list-of-papers {
+    /* margin: 0em 0; */
+    text-align: left;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#list-of-papers h1 {
+    font-size: 32px;
+    font-weight: normal;
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+#list-of-papers paper {
+    display: block;
+    margin-bottom: 20px;
+}
+
+#list-of-papers paper title-plain {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#list-of-papers paper a {
+    text-decoration: none;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+#list-of-papers paper vline {
+    height: 18px;
+    width: 1px;
+    background-color: black;
+    display: inline-block;
+    transform: translateY(4px);
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+/* Teaching experience formatting */
+
+#teaching-experience {
+    text-align: left;
+    display: block;
+    width: 100%;
+}
+
+#teaching-experience h1 {
+    font-size: 32px;
+    font-weight: normal;
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+#teaching-experience item {
+    display: block;
+    margin-bottom: 20px;
+}
+
+#teaching-experience item a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+#teaching-experience item desc {
+    display: inline-block;
+    font-style: italic;
+    margin-left: 20px;
+}
+
+/* Formatting for Miscellaneous heading */
+
+#misc {
+    text-align: left;
+    display: block;
+    width: 100%;
+}
+
+#misc h1 {
+    font-size: 32px;
+    font-weight: normal;
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+#misc item {
+    display: block;
+    margin-bottom: 20px;
+}
+
+#misc item a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+#misc item desc {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+#misc item ul {
+    margin-left: 20px;
+    padding-left: 20px;
+    list-style-position: outside;
+    list-style-type: disc;
+}
+
+/* 404 page style */
+.error-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
+    height: 100vh;           /* Full viewport height */
+}
+
+.error-content {
+    text-align: center;
+}
+
+.error-content h1 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+
+.error-content p {
+    margin: 0.5em 0;
+}
+
+.error-content form {
+    margin-top: 1em;
+}

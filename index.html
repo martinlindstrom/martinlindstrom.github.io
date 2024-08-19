@@ -1,0 +1,114 @@
+---
+layout: null
+title: Landing Page
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Martin Lindström</title>
+    <link rel="stylesheet" href="/_assets/css/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#top">Home</a>
+            <hr class="small_vline"></hr>
+            <a href="#list-of-papers">Papers</a>
+            <hr class="small_vline"></hr>
+            <a href="#teaching-experience">Teaching Experience</a>
+            <hr class="small_vline"></hr>
+            <a href="#misc">Miscellaneous</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Put name, affilliation, and links -->
+        <section id="title-section">
+            <h1>Martin Lindström</h1>
+            <h2>PhD Student at <a href="https://www.kth.se">KTH</a></h2>
+            <div class="links">
+                <a href="/email/">Email</a>
+                <vline></vline>
+                <a href="https://scholar.google.ca/citations?user=_pt5Q2MAAAAJ">Google Scholar</a>
+                <vline></vline>
+                <a href="https://github.com/martinlindstrom">GitHub</a>
+        </section>
+        <!-- Include bio and image from separate file -->
+        <section id="bio-section">
+            <p style="color: red">This page is currently under construction! At present, most links and are broken. A notable exception to this general rule is the email link: please reach out to me if you have any questions! /Martin</p>
+            {% capture bio_include %}{% include_relative _pages/bio.html %}{% endcapture %}
+            {{ bio_include}}
+        </section>
+        <!-- Include papers in reverse chronological order -->
+        <section id="list-of-papers">
+            <h1>Papers</h1>
+            <!-- GRaM 2024 paper -->
+            {% capture paper_include %}{% include_relative _papers/240728_gram_at_icml24.html %}{% endcapture %}
+            {{ paper_include}}
+            <!-- ECC 2021 paper -->
+            <!-- 
+            {% capture paper_include %}{% include_relative _papers/210701_ecc.html %}{% endcapture %}
+            {{ paper_include}} 
+            -->
+        </section>
+        <!-- Include teaching experience in reverse chronological order -->
+        <section id="teaching-experience">
+            <h1>Teaching Experience</h1>
+            <item>
+                <b>KTH <a href="https://www.kth.se/student/kurser/kurs/EQ1270?l=en">Stochastic Signals and Systems</a></b>: Autumns 2022-2024
+                <br>
+                <desc>3<sup>rd</sup> year BSc course on basic analysis of stochastic signals and systems. My TA duties included: hosting tutorial sessions, marking exams, and creating and marking project assignments.</desc>
+            </item>
+            <item>
+                <b>KTH MSc Theses</b>: Springs 2023-2024
+                <br>
+                <desc>Supervision for MSc theses (30 ECTS, equivalent to half an academic year of study). Typically one student per year for a project pitched by engineering companies.</desc>
+            </item>
+            <item>
+                <b>KTH <a href="https://www.kth.se/student/kurser/kurs/EQ2801?l=en">Optimal Filtering</a></b>: Autumn 2022
+                <br>
+                <desc>Joint MSc and PhD course on designing (primarily linear) optimal filters, in the MMSE sense. My TA duties included marking homework assignments.</desc>
+            </item>
+            <item>
+                <b>KTH <a href="https://www.kth.se/student/kurser/kurs/EP1200?l=en">Introduction to Computing Systems Engineering</a></b>: Springs 2019 and 2020
+                <br>
+                <desc>1<sup>st</sup> year BSc course where students design a computer from scratch. My TA duties mainly included helping students with lab assignments.</desc>
+            </item>
+        </section>
+        <!-- Miscellaneous heading -->
+        <section id="misc">
+            <h1>Miscellaneous</h1>
+            <item>
+                <b>Good Books</b>
+                <br>
+                <desc><a href="https://www.kth.se/profile/gk">Gunnar Karlsson</a>'s list of <a href="https://www.kth.se/profile/gk/page/literature-for-engineers-and-computer-scientists">good books</a> is excellent. It contains world classics, with a bias towards European literature in general, and Swedish literature in particular. If you have any good book suggestions, please reach out!</desc>
+            </item>
+            <item>
+                <b>Good Textbooks and Lecture Notes</b>
+                <br>
+                <desc>Here are some of my favourite textbooks and lecture notes &mdash; and a short comment on why I think so.</desc>
+                <ul>
+                    <li>BETA Mathematics Handbook by Råde and Westergren &mdash; a 500 page formula sheet which contains almost everything from linear algebra, geometry, and calculus</li>
+                    <li>Elements of Information Theory by Cover & Thomas &mdash; maybe the most user-friendly introduction to information theory</li>
+                    <li>Information Theory: From Coding to Learning by Polyanskiy & Wu &mdash; a more advanced treatment of information theory, which contains almost all you need to know about the topic</li>
+                    <li>Convex Optimization by Boyd & Vandenberghe &mdash; motivation superfluous</li>
+                    <li>Understanding Machine Learning: From Theory to Algorithms by Shalev-Shwartz and Ben-David &mdash; a good introduction to classical theoretical machine learning, such as PAC-learnability, SVMs, and much more</li>
+                    <li>A Course in Real Analysis by McDonald and Weiss &mdash; I have found that a basic understanding of measure-theoretic probability is useful to know. Unfortunately, it is a dense subject to tackle. This is the most accessible book I have found.</li>
+                </ul>
+            </item>
+            <!-- <a class="twitter-timeline"
+                href="https://twitter.com/martindlindstrm"
+                data-tweet-limit="4">
+                Tweets by @MartinDLindstrm</a>
+                <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script> -->
+        </section>
+    </main>
+
+    <footer>
+        <p style="float: right;">Last updated: 2024-08-19</p>
+    </footer>
+</body>
+</html>
