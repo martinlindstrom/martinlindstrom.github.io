@@ -1,12 +1,10 @@
 
-# Latest Paper Title
+# A Coding-Theoretic Analysis of Hyperspherical Prototypical Learning Geometry
 
-**Martin Lindström**, Coauthor 1, Coauthor 2
+**Martin Lindström**, Borja Rodríguez-Gálvez, Ragnar Thobaben, and Mikael Skoglund
 
-*GRaM 2024*
+*GRaM Workshop at ICML 2024*
 
-This is a nice abstract. $$x^2$$
+![Profile Picture](/_assets/images/cube_sphere_4pts.png)
 
-![Profile Picture](/_assets/images/profile_pic.png)
-
-[arXiv](#) | [BibTeX](/240728_gram_at_icml24_bib/)
+[arXiv](https://arxiv.org/abs/2407.07664) | [BibTeX](/_pages/240728_gram_at_icml24_bib.md)
