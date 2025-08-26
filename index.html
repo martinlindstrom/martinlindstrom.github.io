@@ -27,11 +27,11 @@ title: Landing Page
     <header>
         <nav>
             <a href="#top">Home</a>
-            <hr class="small_vline"></hr>
+            <vline></vline>
             <a href="#list-of-papers">Papers</a>
-            <hr class="small_vline"></hr>
+            <vline></vline>
             <a href="#teaching-experience">Teaching Experience</a>
-            <hr class="small_vline"></hr>
+            <vline></vline>
             <a href="#misc">Miscellaneous</a>
         </nav>
     </header>
@@ -44,7 +44,7 @@ title: Landing Page
                 <div class="links">
                     <a href="/email/">Email</a>
                     <vline></vline>
-                    <a href="https://scholar.google.ca/citations?user=_pt5Q2MAAAAJ">Google Scholar</a>
+                    <a href="https://scholar.google.com/citations?user=_pt5Q2MAAAAJ">Google Scholar</a>
                     <vline></vline>
                     <a href="https://github.com/martinlindstrom">GitHub</a>
                 </div>
@@ -52,24 +52,44 @@ title: Landing Page
             <img class="profile-image" src="/_assets/images/martin.jpg" alt="Profile pic">
         </section>
         <!-- Include bio and image from separate file -->
-        <section id="bio-section">
+        <section id="biography">
             {% capture bio_include %}{% include_relative _pages/bio.md %}{% endcapture %}
             {{ bio_include | markdownify }}
         </section>
+
+        <hr>
+        
         <!-- Include papers in reverse chronological order -->
-        <section class="martin" id="list-of-papers">
+        <section id="list-of-papers">
             <h1>Papers</h1>
-            {% assign papers = site.static_files | where_exp: "file", "file.path contains '/_papers/'" %}
-            
-            
-            
-            {% assign sorted_papers = papers | sort: "name" | reverse %}
+            {% assign sorted_papers = site.papers | sort: "name" | reverse %}
             {% for paper in sorted_papers %}
-                {% capture paper_name %}{{ paper.path | split: '/' | last }}{% endcapture %}
-                {% capture paper_include %}{% include_relative _papers/{{ paper_name }} %}{% endcapture %}
-                {{ paper_include | markdownify }}
+                <div class="paper-entry">
+                    <div class="text-content">
+                        {{ paper.content | markdownify }}
+                        <div class="links-container">
+                            {% if paper.arxiv %}
+                            <a href="{{ paper.arxiv }}">arXiv</a>
+                            {% endif %}
+                            {% if paper.arxiv and paper.bibtex %}
+                            <span class="vline"></span>
+                            {% endif %}
+                            {% if paper.bibtex %}
+                            <a href="{{ paper.bibtex }}">BibTeX</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="image-container">
+                        {% if paper.image %}
+                            <img src="{{ paper.image }}" alt="Illustration">
+                        {% endif %}
+                    </div>
+                </div>
             {% endfor %}
         </section>
+
+        <hr>
+        
         <!-- Include teaching experience in reverse chronological order -->
         <section id="teaching-experience">
             <h1>Teaching Experience</h1>
@@ -79,9 +99,9 @@ title: Landing Page
                 <desc>3<sup>rd</sup> year BSc course on basic analysis of stochastic signals and systems. My TA duties included: hosting tutorial sessions, marking exams, and creating and marking project assignments.</desc>
             </item>
             <item>
-                <b>KTH MSc Theses</b>: Springs 2023-2024
+                <b>KTH Student Supervision</b>: 
                 <br>
-                <desc>Supervision for MSc theses (30 ECTS, equivalent to half an academic year of study). Typically one student per year for a project pitched by engineering companies.</desc>
+                <desc>Supervision for MSc theses (30 ECTS, equivalent to half an academic year of study), typically one student per year for a project pitched by engineering companies. Occasionally supervision of summer research interns.</desc>
             </item>
             <item>
                 <b>KTH <a href="https://www.kth.se/student/kurser/kurs/EQ2801?l=en">Optimal Filtering</a></b>: Autumn 2022
@@ -94,6 +114,9 @@ title: Landing Page
                 <desc>1<sup>st</sup> year BSc course where students design a computer from scratch. My TA duties mainly included helping students with lab assignments.</desc>
             </item>
         </section>
+        
+        <hr>
+        
         <!-- Miscellaneous heading -->
         <section id="misc">
             <h1>Miscellaneous</h1>
@@ -105,14 +128,14 @@ title: Landing Page
             <item>
                 <b>Good Textbooks and Lecture Notes</b>
                 <br>
-                <desc>Here are some of my favourite textbooks and lecture notes &mdash; and a short comment on why I think so.</desc>
+                <desc>Here are some of my favourite textbooks and lecture notes &mdash; and a short comment on why I like them.</desc>
                 <ul>
-                    <li>BETA Mathematics Handbook by Råde and Westergren &mdash; a 500 page formula sheet which contains almost everything from linear algebra, geometry, and calculus</li>
-                    <li>Elements of Information Theory by Cover & Thomas &mdash; maybe the most user-friendly introduction to information theory</li>
-                    <li>Information Theory: From Coding to Learning by Polyanskiy & Wu &mdash; a more advanced treatment of information theory, which contains almost all you need to know about the topic</li>
-                    <li>Convex Optimization by Boyd & Vandenberghe &mdash; motivation superfluous</li>
-                    <li>Understanding Machine Learning: From Theory to Algorithms by Shalev-Shwartz and Ben-David &mdash; a good introduction to classical theoretical machine learning, such as PAC-learnability, SVMs, and much more</li>
-                    <li>A Course in Real Analysis by McDonald and Weiss &mdash; I have found that a basic understanding of measure-theoretic probability is useful to know. Unfortunately, it is a dense subject to tackle. This is the most accessible book I have found.</li>
+                    <!-- <li>BETA Mathematics Handbook by Råde and Westergren &mdash; a 500 page formula sheet which contains almost everything from linear algebra, geometry, and calculus</li> -->
+                    <li>"Elements of Information Theory" by Cover & Thomas &mdash; maybe the most user-friendly introduction to information theory</li>
+                    <li>"Information Theory: From Coding to Learning" by Polyanskiy & Wu &mdash; a more advanced treatment of information theory, which contains almost all you need to know about the topic</li>
+                    <li>"Convex Optimization" by Boyd & Vandenberghe &mdash; user-friendly introduction to optimisation problems which any self-respecting ML researcher should have a cursory understanding of</li>
+                    <li>"Understanding Machine Learning: From Theory to Algorithms" by Shalev-Shwartz and Ben-David &mdash; a good introduction to classical theoretical machine learning, such as PAC-learnability, SVMs, etc.</li>
+                    <li>"A Course in Real Analysis" by McDonald and Weiss &mdash; an introduction to measure-theoretic probability which I think is more accessible than the more popular works by Kallenberg and Cinlar</li>
                 </ul>
             </item>
             <!-- <a class="twitter-timeline"
@@ -124,7 +147,7 @@ title: Landing Page
     </main>
 
     <footer>
-        <p style="float: right;">Last updated: 2025-01-09
+        <p style="float: right;">Last updated: 2025-08-26
         <br>
         Copyright &copy; 2025 Martin Lindström & Adam Peleback (<a href="https://adampeleback.com">adampeleback.com</a>)
         </p>

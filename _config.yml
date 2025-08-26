@@ -1,16 +1,17 @@
-baseurl: "" # Set to "/martinlindstrom" before pushing to GitHub
+baseurl: "" 
 url: "https://martinlindstrom.github.io"
-include: ['_pages', '_assets', '_papers']
+include: ['_pages', '_assets', '_papers', '_bibs']
 
 collections:
   papers:
-    order:
-      - 240728_gram_at_icml24.html
-      - 210701_ecc.html
+    output: false
+  bibs:
+    output: true
+    permalink: /:path/
 
 defaults:
   -
     scope:
-      path: "" # an empty string here means all files in the project
+      path: "" 
     values:
-      layout: "default"
+      layout: null
