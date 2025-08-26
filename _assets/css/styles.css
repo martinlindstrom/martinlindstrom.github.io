@@ -22,6 +22,7 @@ body {
     margin: 0 auto;
     margin-top: var(--header-height);
     text-align: left;
+    padding: 0 10px;
 }
 
 main {
@@ -36,7 +37,7 @@ main {
 
 footer {
     font-size: 12px;
-    padding: 0;
+    padding: 0 10px;
     background-color: #f8f8f8;
     border-top: 1px solid #e7e7e7;
     margin-top: auto;
@@ -108,7 +109,7 @@ hr {
 header {
     background-color: #f8f8f8;
     border-bottom: 1px solid #e7e7e7;
-    padding: 1em 0;
+    padding: 1em 10px;
     width: 100%;
     position: fixed;
     top: 0;
